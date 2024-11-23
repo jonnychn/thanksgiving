@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thanksgiving Gratitude Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #fdf6e3;
+    }
+    h1 {
+      color: #e07a5f;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin: 20px auto;
+      max-width: 800px;
+    }
+    .box {
+      background-color: #f4a261;
+      color: white;
+      padding: 20px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: transform 0.2s;
+    }
+    .box:hover {
+      transform: scale(1.05);
+    }
+    .picked {
+      background-color: #264653;
+    }
+  </style>
+</head>
+<body>
+  <h1>Thanksgiving Gratitude Game</h1>
+  <p>Click on a box to answer a prompt about gratitude and appreciation!</p>
+  <div class="grid" id="grid">
+    <div class="box" onclick="pickBox(this)">What are you most thankful for this year?</div>
+    <div class="box" onclick="pickBox(this)">Share a special moment you had this year.</div>
+    <div class="box" onclick="pickBox(this)">Who is someone you appreciate and why?</div>
+    <div class="box" onclick="pickBox(this)">What is a challenge you overcame this year?</div>
+    <div class="box" onclick="pickBox(this)">Name something small that brings you joy.</div>
+    <div class="box" onclick="pickBox(this)">What is a family tradition you're grateful for?</div>
+    <div class="box" onclick="pickBox(this)">What are you looking forward to next year?</div>
+    <div class="box" onclick="pickBox(this)">What is a lesson you learned this year?</div>
+    <div class="box" onclick="pickBox(this)">Name a person who made your life better this year.</div>
+    <div class="box" onclick="pickBox(this)">What's your favorite Thanksgiving memory?</div>
+    <div class="box" onclick="pickBox(this)">What is one thing you love about the people in this room?</div>
+    <div class="box" onclick="pickBox(this)">Share something about this year that surprised you.</div>
+    <div class="box" onclick="pickBox(this)">What is the best gift you have ever received?</div>
+    <div class="box" onclick="pickBox(this)">What is the best gift you have ever given to someone else?</div>
+    <div class="box" onclick="pickBox(this)">What is one thing you appreciate about yourself?</div>
+    <div class="box" onclick="pickBox(this)">What are you most proud of accomplishing this year?</div>
+    <div class="box" onclick="pickBox(this)">Who inspired you the most this year?</div>
+    <div class="box" onclick="pickBox(this)">What is a kind gesture someone did for you this year?</div>
+    <div class="box" onclick="pickBox(this)">What is one thing you learned about yourself this year?</div>
+    <div class="box" onclick="pickBox(this)">What is your favorite way to express gratitude?</div>
+    <div class="box" onclick="pickBox(this)">What is something you are grateful for that you often take for granted?</div>
+    <div class="box" onclick="pickBox(this)">What is your favorite place that you visited this year?</div>
+    <div class="box" onclick="pickBox(this)">What is something you are grateful for in nature?</div>
+    <div class="box" onclick="pickBox(this)">Who is someone that made you smile recently?</div>
+    <div class="box" onclick="pickBox(this)">What is one thing you did this year that scared you but you did it anyway?</div>
+    <div class="box" onclick="pickBox(this)">What is one thing you would like to thank yourself for?</div>
+    <div class="box" onclick="pickBox(this)">What is your favorite memory from a holiday this year?</div>
+    <div class="box" onclick="pickBox(this)">What is one thing that you are grateful for in your community?</div>
+    <div class="box" onclick="pickBox(this)">What is a skill you developed this year that you are proud of?</div>
+    <div class="box" onclick="pickBox(this)">What is a way that you showed kindness to someone this year?</div>
+    <div class="box" onclick="pickBox(this)">What is your favorite food that you had this year?</div>
+    <div class="box" onclick="pickBox(this)">What is one thing that always makes you laugh?</div>
+    <div class="box" onclick="pickBox(this)">Who is someone you reconnected with this year?</div>
+    <div class="box" onclick="pickBox(this)">What is something you are grateful for about your health?</div>
+    <div class="box" onclick="pickBox(this)">What is one thing you are thankful for about your work or school?</div>
+    <div class="box" onclick="pickBox(this)">What is your favorite song that you listened to this year?</div>
+    <div class="box" onclick="pickBox(this)">What is a book or movie that had an impact on you this year?</div>
+    <div class="box" onclick="pickBox(this)">What is something you learned from a mistake this year?</div>
+    <div class="box" onclick="pickBox(this)">What is one thing you are thankful for that technology has made possible?</div>
+    <div class="box" onclick="pickBox(this)">What is something creative that you did this year that you are proud of?</div>
+    <div class="box" onclick="pickBox(this)">What is a goal you reached this year that you are proud of?</div>
+    <div class="box" onclick="pickBox(this)">What is something about your home that you are grateful for?</div>
+    <div class="box" onclick="pickBox(this)">What is a positive change you made this year?</div>
+    <div class="box" onclick="pickBox(this)">What is a piece of advice that helped you this year?</div>
+    <div class="box" onclick="pickBox(this)">What is one thing you are grateful for about your body?</div>
+    <div class="box" onclick="pickBox(this)">What is something that made you feel loved this year?</div>
+    <div class="box" onclick="pickBox(this)">What is one thing you are grateful for in your daily routine?</div>
+    <div class="box" onclick="pickBox(this)">What is a risk you took this year that paid off?</div>
+    <div class="box" onclick="pickBox(this)">What is your favorite way to help others?</div>
+    <div class="box" onclick="pickBox(this)">What is something that you were worried about, but it turned out okay?</div>
+    <div class="box" onclick="pickBox(this)">What is something you are grateful for that happened unexpectedly?</div>
+  </div>
+
+  <script>
+    function pickBox(element) {
+      if (!element.classList.contains('picked')) {
+        element.classList.add('picked');
+        element.style.pointerEvents = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
